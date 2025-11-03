@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  color: #333;
+  background-color: #fff7b3; /* 🌼 JAUNE PASTEL CLAIR ET CHALEUREUX */
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  text-align: center;
+}
+
+/* HEADER */
+header {
+  text-align: center;
+  padding: 2rem 1rem;
+  background-color: #d5b3ff;
+  border-bottom: 4px solid #a05eff;
+}
+
+header h1 {
+  font-size: 1.8rem;
+  margin: 0;
+}
+
+header span {
+  color: #7a32ff;
+  font-weight: 600;
+}
+
+/* PAGE ACCUEIL */
+.accueil-main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 3rem;
+}
+
+.nuages {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.bloc {
+  position: relative;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.bloc:hover {
+  transform: scale(1.05);
+}
+
+.bloc p {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -60%);
+  font-weight: 700;
+  color: #4a1d99;
+  font-size: 1rem;
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* --- FORMES DE NUAGE --- */
+.nuage {
+  display: block;
+  width: 140px;
+  height: 80px;
+  background: #e6ccff;
+  border-radius: 50px;
+  position: relative;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  animation: flotter 6s ease-in-out infinite;
+  z-index: 1;
+}
+
+.nuage::before, .nuage::after {
+  content: "";
+  position: absolute;
+  background: #e6ccff;
+  border-radius: 50%;
+}
+
+.nuage::before {
+  width: 70px;
+  height: 70px;
+  top: -25px;
+  left: 25px;
+}
+
+.nuage::after {
+  width: 60px;
+  height: 60px;
+  top: -20px;
+  right: 20px;
+}
+
+.nuage:hover {
+  background-color: #d5b3ff;
+}
+
+/* EFFET FLOTTER */
+@keyframes flotter {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+/* --- PAGES INTERNES --- */
+.contenu-centre {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 70vh;
+}
+
+.bulle-page {
+  background-color: #e6ccff;
+  border-radius: 40px;
+  padding: 2rem 3rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  max-width: 700px;
+  text-align: center;
+  animation: apparaitre 1s ease;
+}
+
+/* Apparition douce */
+@keyframes apparaitre {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+footer {
+  text-align: center;
+  background-color: #d5b3ff;
+  padding: 1rem;
+  margin-top: 3rem;
+}
